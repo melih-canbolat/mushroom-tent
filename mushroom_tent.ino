@@ -26,8 +26,8 @@ int valve_state = 0;
 int fan_state = 0;
 int ppm;  // Variable to store MQ-135 sensor reading
 
-int light_on_time = 12;   // Led lighting on time duration in hours
-int light_off_time = 12;  // Led lighting off time duration in hours
+unsigned long light_on_time = 12;   // Led lighting on time duration in hours
+unsigned long light_off_time = 12;  // Led lighting off time duration in hours
 int desiredHumidity = 75;      // Desired value of the humidity
 int desiredHumidityError = 5;  // Plus/Minus range in huumidity
 int desiredPPM = 20;      // Desired air quality (lower is better)
@@ -44,8 +44,8 @@ void setup()
   pinMode(RELAY2, OUTPUT);
   pinMode(RELAY3, OUTPUT);
   pinMode(RELAY4, OUTPUT);
-  digitalWrite(RELAY1, HIGH);
-  digitalWrite(RELAY2, HIGH);
+  digitalWrite(RELAY1, LOW);
+  digitalWrite(RELAY2, LOW);
   digitalWrite(RELAY3, HIGH);
   digitalWrite(RELAY4, HIGH);
   delay(3000); // 20s delay for MQ-135 to preheat

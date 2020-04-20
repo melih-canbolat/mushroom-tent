@@ -12,11 +12,11 @@
 #include <dht11.h>
 
 #define DHT11_PIN 2  // Data pin of DHT11
-#define RELAY1 7 // Defining pins for the four-channel relay module
+#define RELAY1 7     // Defining pins for the four-channel relay module
 #define RELAY2 6
 #define RELAY3 5
 #define RELAY4 4
-#define MQPIN A0  // MQ-135 pin
+#define MQPIN A0     // MQ-135 pin
 
 int lights = 0;  // State of the lights; 1=On, 0=Off
 
@@ -40,15 +40,15 @@ dht11 DHT11;
 void setup()
 {
   Serial.begin(9600);
-  pinMode(RELAY1, OUTPUT); // Define relay pins as output
+  pinMode(RELAY1, OUTPUT);  // Define relay pins as output
   pinMode(RELAY2, OUTPUT);
   pinMode(RELAY3, OUTPUT);
   pinMode(RELAY4, OUTPUT);
-  digitalWrite(RELAY1, LOW);
+  digitalWrite(RELAY1, LOW);  // Initial states of all the relays
   digitalWrite(RELAY2, LOW);
   digitalWrite(RELAY3, HIGH);
   digitalWrite(RELAY4, HIGH);
-  delay(3000); // 20s delay for MQ-135 to preheat
+  delay(20000);  // 20s delay for MQ-135 to preheat
 }
 
 void loop()

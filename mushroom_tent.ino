@@ -48,12 +48,12 @@ void setup()
   digitalWrite(RELAY2, LOW);
   digitalWrite(RELAY3, HIGH);
   digitalWrite(RELAY4, HIGH);
-  delay(20000);  // 20s delay for MQ-135 to preheat
+  //delay(20000);  // 20s delay for MQ-135 to preheat
 }
 
 void loop()
 {
-  delay(300);  // Slow down the program
+  delay(500);  // Slow down the program
   int chk = DHT11.read(DHT11_PIN);
   ppm = analogRead(MQPIN);   // Store air quality value
   humid = DHT11.humidity;    // Store humidity
